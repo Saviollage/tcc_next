@@ -3,6 +3,7 @@ import { constants } from "../util/constants";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { useToasts } from "react-toast-notifications";
+import { useEffect } from "react";
 
 export function EnterRoom() {
   const router = useRouter();
@@ -25,16 +26,20 @@ export function EnterRoom() {
     });
 
     const data = await res.json();
+
     if (res.status === 200) {
+      if (typeof window !== "undefined") {
+        localStorage.setItem("roomName", data.room.name);
+        localStorage.setItem("roomId", data.room._id);
+        localStorage.setItem("participantId", data.participant._id);
+        localStorage.setItem("participantName", data.participant.name);
+        localStorage.setItem("roomPin", data.room.pin);
+      }
       router.push({
         pathname: "/room",
-        query: {
-          roomId: data.room._id,
-          participant: data.participant._id,
-        },
       });
     } else {
-      addToast(data.error, { appearance: "warning" });
+      addToast(data.error, { appearance: "warning", autoDismiss: true });
     }
   };
 
@@ -100,16 +105,18 @@ export function EnterRoom() {
               maxLength: 7,
             })}
             id="roomId"
-            name="roomId"
+            name="roomPin"
             type="text"
             autoComplete="roomId"
             placeholder="Room ID"
           />
-          {errors.roomId && (
+          {errors.roomPin && (
             // if errors then display alert
             <div className={styles.formError}>
-              {errors.roomId?.type === "required" && <p>Room ID is required</p>}
-              {errors.roomId?.type === "maxLength" && (
+              {errors.roomPin?.type === "required" && (
+                <p>Room ID is required</p>
+              )}
+              {errors.roomPin?.type === "maxLength" && (
                 <p>Max length of room ID is 7 characters!</p>
               )}
             </div>

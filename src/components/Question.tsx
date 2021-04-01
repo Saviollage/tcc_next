@@ -11,11 +11,13 @@ export function Question() {
   }
 
 
+  async function waitForNewNotification() {
+    // 15 * counter + random(45)
+  }
+
   return (
     <div className={styles.enterRoomContainer}>
-      <div>
-        <h1>Focus</h1>
-      </div>
+     
       
     </div>
   );

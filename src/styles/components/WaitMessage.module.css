@@ -1,0 +1,27 @@
+.waitMessageContainer {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--white);
+}
+
+.waitMessageContainer h2{
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.waitMessageContainer p{
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--gray-line);
+}
+
+.waitMessageContainer img{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
