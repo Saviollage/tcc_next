@@ -1,0 +1,98 @@
+.enterRoomContainer {
+  width: 50%;
+  height: 50%;
+  background-color: var(--background);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 0.5fr 4fr;
+  grid-area: "l d f";
+}
+
+.firstColumn {
+  grid-area: "l";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.firstColumn img {
+  max-width: 50%;
+}
+
+.firstColumn h1 {
+  font-family: "Poiret One";
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.dividerArea {
+  /*background-color: var(--gray-line);*/
+  grid-area: "d";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dividerArea div {
+  background-color: var(--gray-line);
+  width: 2px;
+  height: 80%;
+}
+
+.formColumn {
+  grid-area: "f";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formColumn form {
+  grid-area: "f";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.formColumn input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.3rem;
+  border: 0px;
+  border-radius: 5px;
+  background-color: var(--gray-line);
+}
+
+.formColumn input[placeholder] {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.formColumn button {
+  background-color: var(--complementary);
+  width: 100%;
+  padding: 1rem;
+  margin: 0.3rem;
+  border: 0px;
+  border-radius: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--white);
+}
+
+.formColumn button:hover {
+  background-color: var(--complementaryLight);
+}
+
+.formError {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: small;
+  color: red;
+}
