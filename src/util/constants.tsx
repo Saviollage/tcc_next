@@ -2,6 +2,7 @@ export const constants = {
   APP_URL: "https://tcc-focus-api.herokuapp.com",
   events: {
     PARTICIPANTS_NEW: "/participant/new",
+    SEND_ANSWER: "/answer/newList",
   },
   questionList: [
     "Sente-se estimulado/desafiado pela atividade?",

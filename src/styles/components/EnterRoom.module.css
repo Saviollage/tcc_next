@@ -96,3 +96,24 @@
   font-size: small;
   color: red;
 }
+
+.fullContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  margin-top: 20px;
+  height: 125px;
+  width: 105px;
+}
+
+.emptySpace {
+  margin-top: 20px;
+  height: 125px;
+  width: 105px;
+}

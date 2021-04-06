@@ -9,7 +9,7 @@ export function WaitMessage() {
 
   return (
     <div className={styles.waitMessageContainer}>
-      <img src="ball-triangle.svg" />
+      <img src="puff.svg" width="60" />
       <h2> Hi, {userName}</h2>
       <p> Please wait for the questions </p>
     </div>
