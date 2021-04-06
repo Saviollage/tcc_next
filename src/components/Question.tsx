@@ -127,7 +127,7 @@ export function Question({ onFinish }) {
           onClick={handleQuestion}
           disabled={isLoading}
         >
-          Send
+          Enviar
         </button>
       )}
       {isLoading && <img src="grid.svg" height="60" />}

@@ -38,11 +38,17 @@ export function EnterRoom() {
         localStorage.setItem("participantName", data.participant.name);
         localStorage.setItem("roomPin", data.room.pin);
       }
-      router.push({
-        pathname: "/room",
-      });
+      router.push("/room");
     } else {
-      addToast(data.error, { appearance: "warning", autoDismiss: true });
+      addToast(
+        data.error == "Room not found"
+          ? constants.text.message.errors.enterRoom.notfound
+          : constants.text.message.errors.enterRoom.closed,
+        {
+          appearance: "warning",
+          autoDismiss: true,
+        }
+      );
     }
   };
 
@@ -69,14 +75,16 @@ export function EnterRoom() {
               name="name"
               type="text"
               autoComplete="name"
-              placeholder="Name"
+              placeholder={constants.text.fields.enterRoom.name}
             />
             {errors.name && (
               // if errors then display alert
               <div className={styles.formError}>
-                {errors.name?.type === "required" && <p>Name is required</p>}
+                {errors.name?.type === "required" && (
+                  <p>{constants.text.message.errors.enterRoom.nameRequired}</p>
+                )}
                 {errors.name?.type === "maxLength" && (
-                  <p>Max length of name is 20 characters!</p>
+                  <p>{constants.text.message.errors.enterRoom.charLimit20}</p>
                 )}
               </div>
             )}
@@ -90,16 +98,18 @@ export function EnterRoom() {
               name="code"
               type="text"
               autoComplete="code"
-              placeholder="Student ID"
+              placeholder={constants.text.fields.enterRoom.studentId}
             />
             {errors.code && (
               // if errors then display alert
               <div className={styles.formError}>
                 {errors.code?.type === "required" && (
-                  <p>Student ID is required</p>
+                  <p>
+                    {constants.text.message.errors.enterRoom.studentIdRequired}
+                  </p>
                 )}
                 {errors.code?.type === "maxLength" && (
-                  <p>Max length of Student ID is 20 characters!</p>
+                  <p>{constants.text.message.errors.enterRoom.charLimit20}</p>
                 )}
               </div>
             )}
@@ -113,22 +123,24 @@ export function EnterRoom() {
               name="roomPin"
               type="text"
               autoComplete="roomId"
-              placeholder="Room ID"
+              placeholder={constants.text.fields.enterRoom.roomId}
             />
             {errors.roomPin && (
               // if errors then display alert
               <div className={styles.formError}>
                 {errors.roomPin?.type === "required" && (
-                  <p>Room ID is required</p>
+                  <p>
+                    {constants.text.message.errors.enterRoom.roomIdRequired}
+                  </p>
                 )}
                 {errors.roomPin?.type === "maxLength" && (
-                  <p>Max length of room ID is 7 characters!</p>
+                  <p>{constants.text.message.errors.enterRoom.charLimit7}</p>
                 )}
               </div>
             )}
             <br />
             <button type="submit" disabled={isLoading}>
-              Register
+              {constants.text.fields.enterRoom.button}
             </button>
           </form>
         </div>

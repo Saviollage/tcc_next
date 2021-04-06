@@ -1,4 +1,4 @@
-.enterRoomContainer {
+.loginContainer {
   width: 90%;
   height: 90%;
   padding: 20px;
@@ -6,7 +6,7 @@
   border-radius: 10px;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 2fr 0.5fr 4fr;
+  grid-template-columns: 4fr 0.5fr 2fr;
   grid-area: "l d f";
 }
 
@@ -26,7 +26,7 @@
   font-family: "Poiret One";
   font-size: 3rem;
   font-weight: 400;
-  color: var(--primary);
+  color: var(--complementary);
 }
 
 .dividerArea {
@@ -66,7 +66,6 @@
   margin: 0.3rem;
   border: 0px;
   border-radius: 5px;
-  outline: none;
   background-color: var(--gray-line);
 }
 
@@ -74,11 +73,10 @@
   text-align: center;
   font-family: "Montserrat";
   font-weight: 600;
-  outline: none;
 }
 
 .formColumn button {
-  background-color: var(--complementary);
+  background-color: var(--primary);
   width: 100%;
   padding: 1rem;
   margin: 0.3rem;
@@ -91,7 +89,7 @@
 }
 
 .formColumn button:hover {
-  background-color: var(--complementaryLight);
+  background-color: var(--secondary);
 }
 
 .formError {

@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { Question } from "../components/Question";
 import { WaitMessage } from "../components/WaitMessage";
 import { useState } from "react";
-import { setInterval } from "node:timers";
 
 export default function Room() {
   const router = useRouter();
@@ -28,7 +27,6 @@ export default function Room() {
     adicionar pedido de acesso a camera (somente)
     */
   }
-  // 15 * counter + random(45)
 
   function waitNewQuestion() {
     if (!haveData)
