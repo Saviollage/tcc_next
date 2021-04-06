@@ -29,13 +29,11 @@ export function Login() {
 
     if (res.status === 200) {
       if (typeof window !== "undefined") {
-        localStorage.setItem("roomName", data.room.name);
-        localStorage.setItem("roomId", data.room._id);
-        localStorage.setItem("participantId", data.participant._id);
-        localStorage.setItem("participantName", data.participant.name);
-        localStorage.setItem("roomPin", data.room.pin);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userName", data.user.name);
+
       }
-      router.push("/room");
+      router.push("/myRooms");
     } else {
       addToast(data.error, {
         appearance: "warning",
@@ -80,7 +78,7 @@ export function Login() {
               })}
               id="password"
               name="password"
-              type="text"
+              type="password"
               autoComplete="password"
               placeholder={constants.text.fields.login.password}
             />

@@ -1,0 +1,49 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary); 
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 1fr;
+  grid-area: "a" "b" "c";
+}
+
+.header {
+  grid-area: "a";
+  text-align: center;
+  font-family: "Poiret One";
+  font-weight: 400;
+  font-size: larger;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header div {
+  background-color: var(--complementary);
+  margin-top: 10px;
+  height: 1px;
+  width: 15%;
+  position: relative;
+  text-align: center;
+}
+
+.content {
+  grid-area: "b";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer {
+  grid-area: "c";
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--white);
+}
