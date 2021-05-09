@@ -1,0 +1,51 @@
+.container {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+  background-color: var(--background);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.container h2 {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.container div p {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--complementary);
+}
+
+.activeText {
+    font-size: 18px;
+}
+
+.line {
+    height: 2px;
+    background-color: var(--gray-line);
+    margin: 10px 0 10px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.participants {
+    display: flex;
+    flex-direction: row;
+}
+
+.participants img {
+    margin-left: 10px;
+   height: 20px;
+}

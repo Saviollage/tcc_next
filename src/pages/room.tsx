@@ -41,12 +41,13 @@ export default function Room() {
           }
         },
         (15 + Math.floor(Math.random() * 45)) * 60 * 1000
-        // 5000
+        //5000
       );
   }
 
   requestForPermissions();
   waitNewQuestion();
+  
   return (
     <div className={styles.container}>
       <Head>

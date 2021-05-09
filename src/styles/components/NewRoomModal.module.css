@@ -1,0 +1,82 @@
+.newRoomContainer {
+  width: 60%;
+  height: 90%;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 10px;
+  display: flex; 
+  align-items: center;
+}
+
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formColumn form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.formColumn input {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.3rem;
+  border: 0px;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--gray-line);
+}
+
+.formColumn input[placeholder] {
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 600;
+  outline: none;
+}
+
+.formColumn button {
+  background-color: var(--complementary);
+  width: 100%;
+  padding: 1rem;
+  margin: 0.3rem;
+  border: 0px;
+  border-radius: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--white);
+  outline: none;
+}
+
+.formColumn button:hover {
+  background-color: var(--complementaryLight);
+}
+
+.formError {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: small;
+  color: red;
+}
+
+.fullContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.loading {
+  margin-top: 20px;
+  height: 125px;
+  width: 105px;
+}

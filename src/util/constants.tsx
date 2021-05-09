@@ -4,6 +4,8 @@ export const constants = {
     PARTICIPANTS_NEW: "/participant/new",
     LOGIN: "/auth/authenticate",
     SEND_ANSWER: "/answer/newList",
+    MY_ROOMS: "/room/my",
+    NEW_ROOM: '/room/createRoom'
   },
   questionList: [
     "Sente-se estimulado/desafiado pela atividade?",
