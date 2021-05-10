@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { constants } from "../util/constants";
 import { Roomcard } from "../components/RoomCard";
-import { NewRoomModal } from "../components/newRoomModal";
+//import { NewRoomModal } from "../components/newRoomModal";
 
 export default function MyRooms() {
   const router = useRouter();
