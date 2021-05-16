@@ -24,6 +24,11 @@ export const constants = {
         roomId: "Código da sala",
         button: "Entrar",
       },
+      newRoom: {
+        name: "Nome da Sala",
+        description: "Descrição",
+        button: "Criar sala",
+      },
       login: {
         email: "Email",
         password: "Senha",

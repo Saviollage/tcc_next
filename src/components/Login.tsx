@@ -31,6 +31,7 @@ export function Login() {
       if (typeof window !== "undefined") {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userName", data.user.name);
+        localStorage.setItem("email", data.user.email);
 
       }
       router.push("/myRooms");

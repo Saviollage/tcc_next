@@ -6,6 +6,7 @@
   border-radius: 10px;
   display: flex; 
   align-items: center;
+  justify-content: center;
 }
 
 
@@ -14,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 90%;
 }
 
 .formColumn form {
@@ -21,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .formColumn input {
@@ -67,12 +69,11 @@
 
 .fullContainer {
   display: flex;
-  height: 100%;
-  width: 100%;
+  height: 60%;
+  width: 60%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 900;
+  z-index: 10;
 }
 
 .loading {
