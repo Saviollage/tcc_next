@@ -54,19 +54,33 @@ export default function MyRooms() {
         <title> 🎓 | Focus </title>
       </Head>
       <div className={styles.header}>
-        {userName.toLocaleUpperCase()}
-        <div></div>
+        
+          {userName.toLocaleUpperCase()}
+          <div className={styles.line}></div>
+        <button className={styles.headButton} onClick={() => router.push("/")}> SAIR </button>
       </div>
       <div className={styles.content}>
-        {isModalShowing ? <NewRoomModal
-          key={new Date().getMilliseconds()}
-          onClick={() => {
-            setModalShowing(false)
-            getData()
-          }}
-          show={isModalShowing} /> : isLoading ? (<img src="ball-triangle.svg" />) : data.length > 0 ? data.map(item =>
-            (<div><Roomcard room={item} key={item._id} /></div>)
-          ) : (<h2 style={{ color: 'var(--white)', fontFamily: 'Montserrat' }}> Nenhuma sala encontrada </h2>)}
+        {isModalShowing ?
+          <NewRoomModal
+            key={new Date().getMilliseconds()}
+            onClick={() => {
+              setModalShowing(false)
+              getData()
+            }}
+            show={isModalShowing} /> :
+          isLoading ?
+            (<img src="ball-triangle.svg" />)
+            : data.length > 0 ?
+              (<div className={styles.roomList}>
+
+                { data.map(
+                  item =>
+                  (<div>
+                    <Roomcard room={item} update={() => getData()} key={item._id} />
+                  </div>)
+                )}
+              </div>)
+              : (<h2 style={{ color: 'var(--white)', fontFamily: 'Montserrat' }}> Nenhuma sala encontrada </h2>)}
       </div>
       <div className={styles.footer}>
         {!isModalShowing && <button onClick={handleNewRoom}> Criar nova sala </button>}

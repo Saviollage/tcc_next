@@ -40,6 +40,8 @@ export function NewRoomModal({ onClick, show }) {
             <div className={styles.fullContainer}>
                 <div className={styles.emptySpace}></div>
                 <div className={styles.newRoomContainer}>
+                    <h3> Nova sala </h3>
+                    <br />
                     <div className={styles.formColumn}>
                         <form onSubmit={handleSubmit(submitForm)}>
                             <input
@@ -94,6 +96,9 @@ export function NewRoomModal({ onClick, show }) {
                             </button>
                         </form>
                     </div>
+                    <button className={styles.returnButton} onClick={() => onClick()}>
+                        Voltar
+                            </button>
                 </div>
                 <div className={styles.loading}>
                     {isLoading && <img src="ball-triangle.svg" />}

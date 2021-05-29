@@ -5,7 +5,9 @@ export const constants = {
     LOGIN: "/auth/authenticate",
     SEND_ANSWER: "/answer/newList",
     MY_ROOMS: "/room/my",
-    NEW_ROOM: '/room/createRoom'
+    NEW_ROOM: '/room/createRoom',
+    ACTIVATE: '/activate',
+    DESACTIVATE: '/desactivate'
   },
   questionList: [
     "Sente-se estimulado/desafiado pela atividade?",

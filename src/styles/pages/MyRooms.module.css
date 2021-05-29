@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
 }
-.header div {
+.line {
   background-color: var(--complementary);
   margin-top: 10px;
   height: 1px;
@@ -32,6 +32,13 @@
   text-align: center;
 }
 
+.headButton {
+  border: 0;
+  background-color: transparent;
+  font-family: 'Poiret One';
+  font-weight: 200;
+  color: var(--white);
+}
 .content {
   grid-area: "b";
   display: flex;
@@ -42,7 +49,8 @@
 .roomList {
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .footer {
