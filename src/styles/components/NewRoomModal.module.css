@@ -1,6 +1,6 @@
 .newRoomContainer {
   width: 60%;
-  height: 90%;
+  height: 100%;
   padding: 20px;
   background-color: var(--background);
   border-radius: 10px;
@@ -102,7 +102,7 @@
 
 .fullContainer {
   display: flex;
-  height: 60%;
+  height: 80%;
   width: 60%;
   align-items: center;
   justify-content: center;

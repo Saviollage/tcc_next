@@ -8,6 +8,10 @@
   padding: 20px;
 }
 
+.container > button {
+  border: 0;
+}
+
 .container h2 {
   text-align: center;
   font-family: "Montserrat";

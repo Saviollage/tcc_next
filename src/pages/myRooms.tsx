@@ -54,10 +54,16 @@ export default function MyRooms() {
         <title> 🎓 | Focus </title>
       </Head>
       <div className={styles.header}>
-        
+        <div></div>
+        <div className={styles.mainName}>
           {userName.toLocaleUpperCase()}
           <div className={styles.line}></div>
-        <button className={styles.headButton} onClick={() => router.push("/")}> SAIR </button>
+        </div>
+        <div>
+          <button className={styles.headButton} onClick={() => router.push("/")}> 
+            <img src="leave.png" alt="leave"  />
+          </button>
+        </div>
       </div>
       <div className={styles.content}>
         {isModalShowing ?
@@ -76,7 +82,7 @@ export default function MyRooms() {
                 { data.map(
                   item =>
                   (<div>
-                    <Roomcard room={item} update={() => getData()} key={item._id} />
+                    <Roomcard room={item} update={() => getData()} key={item._id} onClick={() => router.push(`/dashboard?roomId=${item._id}`)} />
                   </div>)
                 )}
               </div>)

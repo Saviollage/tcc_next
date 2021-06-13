@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 5px;
+    margin: 5px;
+}

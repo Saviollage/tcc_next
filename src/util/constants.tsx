@@ -7,7 +7,8 @@ export const constants = {
     MY_ROOMS: "/room/my",
     NEW_ROOM: '/room/createRoom',
     ACTIVATE: '/activate',
-    DESACTIVATE: '/desactivate'
+    DESACTIVATE: '/desactivate',
+    DASHBOARD: '/room/data'
   },
   questionList: [
     "Sente-se estimulado/desafiado pela atividade?",
