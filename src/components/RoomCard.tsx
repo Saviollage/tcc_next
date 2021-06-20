@@ -2,7 +2,7 @@ import router from "next/router";
 import styles from "../styles/components/RoomCard.module.css";
 import { constants } from "../util/constants";
 
-const changeRoomStatus = async ({ storeId, isActive, update }) => {
+export const changeRoomStatus = async ({ storeId, isActive, update }) => {
     const res = await fetch(
         constants.APP_URL + '/room' +
         (isActive ?
@@ -26,10 +26,10 @@ export function Roomcard({ room, update, onClick }) {
     return (
         <div className={styles.container}>
             <button onClick={onClick}>
-            <h2> {room.name} </h2>
-            <div className={styles.date}> {new Date(room.createdAt).toLocaleDateString()}</div>
-            <br />
-            <div> <p> {room.pin}</p> </div>
+                <h2> {room.name} </h2>
+                <div className={styles.date}> {new Date(room.createdAt).toLocaleDateString()}</div>
+                <br />
+                <div> <p> {room.pin}</p> </div>
             </button>
             <div className={styles.line}></div>
             <div className={styles.row}>
