@@ -40,7 +40,7 @@ export default function Room() {
             });
           }
         },
-        (15 + Math.floor(Math.random() * 45)) * 60 * 1000
+        (15 + Math.floor(Math.random() * 30)) * 60 * 1000
         //5000
       );
   }
