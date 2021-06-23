@@ -17,14 +17,29 @@ export function DashContent({ data }) {
 
     const options = {
         scales: {
-            
-            yAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true,
-                    },
+            y: {
+                suggestedMin: -2,
+                suggestedMax: 2,
+                grid: {
+                    display: true,
+                    drawBorder: true,
                 },
-            ],
+                ticks: {
+                    count: 3
+                }
+
+            },
+            x: {
+                suggestedMin: -2,
+                suggestedMax: 2,
+                grid: {
+                    display: true,
+                    drawBorder: true,
+                },
+                ticks: {
+                    count: 3
+                }
+            },
         },
     };
 
@@ -49,7 +64,7 @@ export function DashContent({ data }) {
                     {!roomStatus && <div style={{ color: 'red' }}> Inativa </div>}
                 </button>
                 <div className={styles.roomDataItem}>
-                    <h2>{data.room.quantAnswers}</h2> <p>Respostas</p>
+                    <h2>{data.participantsAnswersData.length}</h2> <p>Respostas</p>
                 </div>
                 <div className={styles.roomDataItem}>
                     <h2>{data.room.quantParticipants}</h2> <p>Participantes</p>

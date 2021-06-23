@@ -10,6 +10,7 @@
 
 .container > button {
   border: 0;
+  background-color: transparent;
 }
 
 .container h2 {

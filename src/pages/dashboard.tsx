@@ -11,8 +11,10 @@ export default function Dashboard() {
     const { roomId } = router.query
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true)
-    const [isModalShowing, setModalShowing] = useState(false)
-
+    const [update, setUpdate] = useState(false)
+    
+    setInterval(() => setUpdate(!update), 300000)
+    
     var token = "";
     var userName = "";
     if (typeof window !== "undefined") {
@@ -48,7 +50,7 @@ export default function Dashboard() {
     useEffect(() => {
         if (roomId)
             getData()
-    }, [roomId])
+    }, [roomId, update])
 
     return (
         <div className={styles.container}>
