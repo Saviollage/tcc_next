@@ -1,6 +1,7 @@
 import styles from "../styles/components/DashContent.module.css";
-import { Scatter } from 'react-chartjs-2';
+import { Scatter, Bar } from 'react-chartjs-2';
 import { changeRoomStatus } from '../components/RoomCard'
+import { constants } from '../util/constants'
 import { useState } from "react";
 
 export function DashContent({ data }) {
@@ -11,6 +12,7 @@ export function DashContent({ data }) {
                 label: 'Z-Score Alunos',
                 data: data.participantsAnswersData,
                 backgroundColor: '#ff9000',
+                pointRadius: 7,
             },
         ],
     };
@@ -26,8 +28,11 @@ export function DashContent({ data }) {
                 },
                 ticks: {
                     count: 3
+                },
+                title: {
+                    display: true,
+                    text: 'Desafio'
                 }
-
             },
             x: {
                 suggestedMin: -2,
@@ -38,11 +43,80 @@ export function DashContent({ data }) {
                 },
                 ticks: {
                     count: 3
+                },
+                title: {
+                    display: true,
+                    text: 'Habilidade'
                 }
             },
         },
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Distribuição FLOW',
+            },
+        }
     };
+    const colors = ['#2e384d',
+        '#ff9000',
+        '#bdd3de',
+        '#5342EB',
+        '#6D31D4',
+        '#B339F6']
 
+
+    // const barChartsData = {
+    //     labels: [''],
+    //     datasets: [...data.moments[0].moment.questions.map(item => {
+    //         return {
+    //             label: constants.legend[item.questionId],
+    //             data: [item.avg],
+    //             backgroundColor: colors[item.questionId]
+    //         }
+    //     })]
+    // }
+    const labels = data.moments[0].moment.questions.map(item => constants.legend[item.questionId])
+    const datas = data.moments[0].moment.questions.map(item => item.avg)
+    const barChartsData = {
+        labels: labels,
+        datasets: [{
+            data: datas,
+            backgroundColor: colors
+        }
+
+        ]
+    }
+
+    const barChartOptions = {
+        indexAxis: 'y',
+        scales: {
+            x: {
+                suggestedMin: 0,
+                suggestedMax: 9,
+                grid: {
+                    display: false
+                }
+            },
+        },
+
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Médias da turma',
+            },
+        },
+    }
+
+
+
+    console.log(barChartsData)
     return (<div className={styles.container}>
 
         <div className={styles.card}>
@@ -75,8 +149,13 @@ export function DashContent({ data }) {
                 </div>
             </div>
             <div className={styles.line}></div>
-            <div className={styles.chart}>
-                <Scatter data={dataChart} options={options} type='Scatter' />
+            <div className={styles.chartsAndData}>
+                <div className={styles.chart}>
+                    <Scatter data={dataChart} options={options} type='Scatter' />
+                </div>
+                <div className={styles.roomDetails}>
+                    <Bar data={barChartsData} options={barChartOptions} type='horizontalBar' />
+                </div>
             </div>
             <div>
 

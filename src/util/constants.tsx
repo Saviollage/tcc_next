@@ -19,6 +19,15 @@ export const constants = {
     "Ativo",
     "Envolvido",
   ],
+  legend: [
+    "Estimulado",
+    "Capaz",
+    "Importante",
+    "Alerta",
+    "Feliz",
+    "Ativo",
+    "Envolvido",
+  ],
   text: {
     fields: {
       enterRoom: {

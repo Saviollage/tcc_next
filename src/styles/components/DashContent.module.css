@@ -11,6 +11,7 @@
   padding: 20px;
   align-items: center;
   justify-content: center;
+  width: 80%;
 }
 
 .card > h2 {
@@ -28,9 +29,34 @@
   color: var(--complementary);
 }
 
-.chart {
-  height: 500px;
-  width: 1000px;
+@media (max-width: 1080px) {
+  .chartsAndData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roomDetails {
+    width: 700px;
+  }
+  .chart {
+    width: 900px;
+  }
+}
+
+@media (max-width: 3000px) {
+  .chartsAndData {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roomDetails {
+    width: 800px;
+  }
+  .chart {
+    width: 1000px;
+  }
 }
 
 .line {
@@ -56,12 +82,12 @@
 }
 
 .activeText {
-    font-size: 18px;
-    border: 0;
-    font-family: 'Montserrat';
-    font-weight: bold;
+  font-size: 18px;
+  border: 0;
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
 .card button {
-    background-color: transparent;
+  background-color: transparent;
 }
