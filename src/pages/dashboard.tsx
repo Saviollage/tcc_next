@@ -54,10 +54,10 @@ export default function Dashboard() {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title> 🎓 | Focus </title>
-            </Head>
             <div className={styles.header}>
+                <Head>
+                    <title> 🎓 | Focus </title>
+                </Head>
                 <div>
                     <button className={styles.headButton} onClick={() => router.push('/myRooms')}>
                         <img src="back.png" alt="back" />
@@ -74,14 +74,20 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {
-                (isLoading || !data) ?
-                    (<div className={styles.loading}>
-                        <img src="ball-triangle.svg" />
-                    </div>
-                    )
-                    : <DashContent data={data} />
-            }
+            <div>
+                {
+                    (isLoading || !data) ?
+                        (<div className={styles.loading}>
+                            <img src="ball-triangle.svg" />
+                        </div>
+                        )
+                        : <DashContent data={data} />
+                }
+            </div>
+
+            <div>
+                
+            </div>
         </div>
     );
 }

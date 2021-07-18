@@ -9,6 +9,7 @@
   grid-template-rows: 1fr 8fr 1fr;
   grid-template-columns: 1fr;
   grid-area: "a" "b" "c";
+  overflow-y: scroll;
 }
 
 .header {
@@ -41,14 +42,14 @@
 .headButton {
   border: 0;
   background-color: transparent;
-  font-family: 'Poiret One';
+  font-family: "Poiret One";
   font-weight: 200;
   color: var(--white);
   font-size: small;
 }
 
 .headButton img {
-    height: 2rem;
+  height: 2rem;
 }
 
 .content {
@@ -63,6 +64,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  width: 60%;
 }
 
 .footer {
@@ -75,15 +77,15 @@
 
 .footer button {
   background-color: var(--complementary);
-  width: 70%;
+  width: 25%;
   padding: 1rem;
-  margin: 0.3rem;
   border: 0px;
   border-radius: 5px;
   font-family: "Montserrat";
   font-weight: 600;
   color: var(--white);
   outline: none;
+  margin-bottom: 50px;
 }
 
 .footer button:hover {

@@ -6,6 +6,7 @@ export const constants = {
     SEND_ANSWER: "/answer/newList",
     MY_ROOMS: "/room/my",
     NEW_ROOM: '/room/createRoom',
+    EDIT_ROOM: '/room/edit',
     ACTIVATE: '/activate',
     DESACTIVATE: '/desactivate',
     DASHBOARD: '/room/data'
@@ -41,6 +42,11 @@ export const constants = {
         description: "Descrição",
         button: "Criar sala",
       },
+      editRoom: {
+        name: "Nome da Sala",
+        minInterval: "Intervalo mínimo",
+        maxInterval: "Invtervalo máximo",
+      },
       login: {
         email: "Email",
         password: "Senha",
@@ -50,6 +56,15 @@ export const constants = {
     message: {
       errors: {
         enterRoom: {
+          nameRequired: "Favor digitar seu nome",
+          charLimit20: "Limite 20 caracteres",
+          charLimit7: "Limite 7 números",
+          studentIdRequired: "Favor digitar sua matricula",
+          roomIdRequired: "Favor digitar código da sala",
+          notfound: "Sala não encontrada",
+          closed: "Sala fechada",
+        },
+        editRoom: {
           nameRequired: "Favor digitar seu nome",
           charLimit20: "Limite 20 caracteres",
           charLimit7: "Limite 7 números",

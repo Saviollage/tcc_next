@@ -1,4 +1,5 @@
 .container {
+    background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +12,7 @@
   padding: 20px;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 90%;
 }
 
 .card > h2 {
@@ -90,4 +91,12 @@
 
 .card button {
   background-color: transparent;
+}
+
+.editButton {
+  border: 0px;
+}
+
+.editButton img {
+  height: 2rem;
 }

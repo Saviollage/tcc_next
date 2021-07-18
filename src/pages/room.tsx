@@ -4,10 +4,36 @@ import { useRouter } from "next/router";
 import { Question } from "../components/Question";
 import { WaitMessage } from "../components/WaitMessage";
 import { useState } from "react";
+import { constants } from "../util/constants";
 
 export default function Room() {
   const router = useRouter();
+  const [minInterval, setMinInterval] = useState(15);
+  const [maxInterval, setMaxInterval] = useState(45);
+
   const data = router.query;
+
+  const getData = async () => {
+    const res = await fetch(
+      constants.APP_URL + "/room/" + localStorage.getItem('roomPin'),
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    ).catch((err) => {
+      console.log(err);
+      return err;
+    });
+
+    if (res.status === 200) {
+      const data = await res.json();
+
+      setMinInterval(data.room.minInterval)
+      setMaxInterval(data.room.maxInterval - minInterval)
+    }
+  }
 
   const [haveData, setData] = useState(false);
 
@@ -22,16 +48,13 @@ export default function Room() {
         Notification.requestPermission();
       }
     }
-    /*
-    TODO:
-    adicionar pedido de acesso a camera (somente)
-    */
   }
 
   function waitNewQuestion() {
     if (!haveData)
       setTimeout(
         () => {
+          getData()
           setData(!haveData);
           if (typeof Notification !== "undefined") {
             new Notification("🎓 Focus", {
@@ -40,8 +63,7 @@ export default function Room() {
             });
           }
         },
-        (15 + Math.floor(Math.random() * 30)) * 60 * 1000
-        // 5000
+        (minInterval + Math.floor(Math.random() * maxInterval)) * 60 * 1000
       );
   }
 
