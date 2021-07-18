@@ -8,8 +8,8 @@ import { constants } from "../util/constants";
 
 export default function Room() {
   const router = useRouter();
-  const [minInterval, setMinInterval] = useState(15);
-  const [maxInterval, setMaxInterval] = useState(45);
+  const [minInterval, setMinInterval] = useState(15); // Default
+  const [maxInterval, setMaxInterval] = useState(45); // Default
 
   const data = router.query;
 
@@ -30,8 +30,8 @@ export default function Room() {
     if (res.status === 200) {
       const data = await res.json();
 
-      setMinInterval(data.room.minInterval)
-      setMaxInterval(data.room.maxInterval - minInterval)
+      setMinInterval(data.minInterval)
+      setMaxInterval(data.maxInterval - data.minInterval)
     }
   }
 
@@ -50,11 +50,11 @@ export default function Room() {
     }
   }
 
-  function waitNewQuestion() {
+  async function waitNewQuestion() {
+    await getData()
     if (!haveData)
       setTimeout(
         () => {
-          getData()
           setData(!haveData);
           if (typeof Notification !== "undefined") {
             new Notification("🎓 Focus", {
