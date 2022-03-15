@@ -5,6 +5,7 @@ import { Question } from "../components/Question";
 import { WaitMessage } from "../components/WaitMessage";
 import { useState } from "react";
 import { constants } from "../util/constants";
+import { useEffect } from "react";
 
 export default function Room() {
   const router = useRouter();
@@ -15,7 +16,8 @@ export default function Room() {
 
   const getData = async () => {
     const res = await fetch(
-      constants.APP_URL + "/room/" + localStorage.getItem('roomPin'),
+//      constants.APP_URL + "/room/" + localStorage.getItem('roomPin'),
+      constants.APP_URL + "/room/" + roomPin,
       {
         method: "GET",
         headers: {
@@ -38,8 +40,10 @@ export default function Room() {
   const [haveData, setData] = useState(false);
 
   var roomName = "";
+  var roomPin = ""
   if (typeof window !== "undefined") {
     roomName = localStorage.getItem("roomName");
+    roomPin = localStorage.getItem("roomPin");
   }
 
   function requestForPermissions() {

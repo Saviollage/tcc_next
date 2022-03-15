@@ -177,10 +177,10 @@ export function DashContent({ data }) {
                 <div className={styles.line}></div>
                 <div className={styles.chartsAndData}>
                     <div className={styles.chart}>
-                        <Scatter data={dataChart} options={options} type='Scatter' />
+                        <Scatter data={dataChart} options={options} />
                     </div>
                     <div className={styles.roomDetails}>
-                        <Bar data={barChartsData} options={barChartOptions} type='horizontalBar' />
+                        <Bar data={barChartsData} />
                     </div>
                 </div>
                 <div>
