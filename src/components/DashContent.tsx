@@ -180,7 +180,7 @@ export function DashContent({ data }) {
                         <Scatter data={dataChart} options={options} />
                     </div>
                     <div className={styles.roomDetails}>
-                        <Bar data={barChartsData} options='barChartOptions' type='horizontalBar' />
+                        <Bar data={barChartsData} />
                     </div>
                 </div>
                 <div>
