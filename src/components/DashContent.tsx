@@ -14,7 +14,7 @@ export function DashContent({ data }) {
     const dataChart = {
         datasets: [
             {
-                label: 'Z-Score Alunos',
+                label: 'Z-Score',
                 data: data.participantsAnswersData,
                 backgroundColor: '#ff9000',
                 pointRadius: 7,
@@ -37,7 +37,7 @@ export function DashContent({ data }) {
                 },
                 title: {
                     display: true,
-                    text: 'Desafio'
+                    text: 'Challenges'
                 }
             },
             x: {
@@ -52,7 +52,7 @@ export function DashContent({ data }) {
                 },
                 title: {
                     display: true,
-                    text: 'Habilidade'
+                    text: 'Skills'
                 }
             },
         },
@@ -62,7 +62,7 @@ export function DashContent({ data }) {
             },
             title: {
                 display: true,
-                text: 'Distribuição FLOW',
+                text: 'FLOW',
             },
         }
     };
@@ -113,7 +113,7 @@ export function DashContent({ data }) {
             },
             title: {
                 display: true,
-                text: 'Médias da turma',
+                text: 'Average',
             },
         },
     }
@@ -146,14 +146,14 @@ export function DashContent({ data }) {
                         storeId: data.room._id,
                         update: () => changeRoomStatus(!status)
                     })}>
-                        {roomStatus && <div style={{ color: 'green' }}> Ativa </div>}
-                        {!roomStatus && <div style={{ color: 'red' }}> Inativa </div>}
+                        {roomStatus && <div style={{ color: 'green' }}> Open </div>}
+                        {!roomStatus && <div style={{ color: 'red' }}> Close </div>}
                     </button>
                     <div className={styles.roomDataItem}>
-                        <h2>{data.participantsAnswersData.length}</h2> <p>Respostas</p>
+                        <h2>{data.participantsAnswersData.length}</h2> <p>Answers</p>
                     </div>
                     <div className={styles.roomDataItem}>
-                        <h2>{data.room.quantParticipants}</h2> <p>Participantes</p>
+                        <h2>{data.room.quantParticipants}</h2> <p>Participants</p>
                     </div>
                     <div className={styles.roomDataItem}>
                         <h2>{new Date(data.room.createdAt).toLocaleDateString()}</h2>
@@ -161,11 +161,11 @@ export function DashContent({ data }) {
                     </div>
                     <div className={styles.roomDataItem}>
                         <h2>{data.room.minInterval}</h2>
-                        <p>Interv. Mín</p>
+                        <p>Minimum time</p>
                     </div>
                     <div className={styles.roomDataItem}>
                         <h2>{data.room.maxInterval}</h2>
-                        <p>Interv. Max</p>
+                        <p>Maximum time</p>
                     </div>
                     <div>
                         <button className={styles.editButton}

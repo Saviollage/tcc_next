@@ -58,7 +58,7 @@ export default function Room() {
           setData(!haveData);
           if (typeof Notification !== "undefined") {
             new Notification("🎓 Focus", {
-              body: "Nova pergunta disponível!\nAbra a aplicação para exibí-la",
+              body: "Flow questions are available!\nReturn to the Focus app to answer quickly.",
               icon: "Logo.png",
             });
           }

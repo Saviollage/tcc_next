@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <div className={styles.header}>
         <button onClick={() => changeMode(!isStudent)}>
-          {isStudent ? "ALUNO" : "PROFESSOR"}
+          {isStudent ? "STUDENT" : "TEACHER"}
         </button>
 
         <div></div>

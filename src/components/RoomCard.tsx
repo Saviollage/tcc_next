@@ -38,8 +38,8 @@ export function Roomcard({ room, update, onClick }) {
                     storeId: room._id,
                     update
                 })}>
-                    {room.active && <div style={{ color: 'green' }}> Ativa </div>}
-                    {!room.active && <div style={{ color: 'red' }}> Inativa </div>}
+                    {room.active && <div style={{ color: 'green' }}> Open </div>}
+                    {!room.active && <div style={{ color: 'red' }}> Close </div>}
                 </button>
                 <div className={styles.participants}>
                     {room.quantParticipants} <img src="group.svg" />

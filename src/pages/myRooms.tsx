@@ -86,10 +86,10 @@ export default function MyRooms() {
                   </div>)
                 )}
               </div>)
-              : (<h2 style={{ color: 'var(--white)', fontFamily: 'Montserrat' }}> Nenhuma sala encontrada </h2>)}
+              : (<h2 style={{ color: 'var(--white)', fontFamily: 'Montserrat' }}> Dashboard empty! </h2>)}
       </div>
       <div className={styles.footer}>
-        {!isModalShowing && <button onClick={handleNewRoom}> Criar nova sala </button>}
+        {!isModalShowing && <button onClick={handleNewRoom}> Create new Room </button>}
       </div>
     </div>
   );

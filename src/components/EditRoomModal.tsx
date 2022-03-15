@@ -49,7 +49,7 @@ export function EditRoomModal({ onClick, show, roomData }) {
             <div className={styles.fullContainer}>
                 <div className={styles.emptySpace}></div>
                 <div className={styles.newRoomContainer}>
-                    <h3> Editar sala </h3>
+                    <h3> Update Room details </h3>
                     <br />
                     <div className={styles.formColumn}>
                         <form onSubmit={handleSubmit(submitForm)}>
@@ -75,7 +75,7 @@ export function EditRoomModal({ onClick, show, roomData }) {
                                 </div>
                             )}
                             <br />
-                            Intervalo mínimo
+                            Minimum time
                             <input
                                 ref={register({
                                     valueAsNumber: true
@@ -90,12 +90,12 @@ export function EditRoomModal({ onClick, show, roomData }) {
                                 <div className={styles.formError}>
 
                                     {errors.code?.type === "valueAsNumber" && (
-                                        <p>{'Apenas números'}</p>
+                                        <p>{'Only numbers'}</p>
                                     )}
                                 </div>
                             )}
                             <br />
-                            Intervalo máximo
+                            Maximum time
                             <input
                                 ref={register({
                                     valueAsNumber: true
@@ -110,13 +110,13 @@ export function EditRoomModal({ onClick, show, roomData }) {
                                 <div className={styles.formError}>
 
                                     {errors.code?.type === "valueAsNumber" && (
-                                        <p>{'Apenas números'}</p>
+                                        <p>{'Only numbers'}</p>
                                     )}
                                 </div>
                             )}
                             <br />
                             <button type="submit" disabled={isLoading}>
-                                {'Confirmar edição'}
+                                {'Update'}
                             </button>
                         </form>
                     </div>

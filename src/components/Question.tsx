@@ -14,7 +14,7 @@ export function Question({ onFinish }) {
   const marks = [
     {
       value: 1,
-      label: "POUCO",
+      label: "Not at all",
     },
     {
       value: 2,
@@ -43,7 +43,7 @@ export function Question({ onFinish }) {
     },
     {
       value: 9,
-      label: "MUITO",
+      label: "Very",
     },
   ];
   let currentValue = 0;
